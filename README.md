@@ -1,0 +1,1 @@
+# mapr-global-streaming-demo
