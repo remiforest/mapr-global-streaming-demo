@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=http://fr:5000/
+HostUrl=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
