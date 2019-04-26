@@ -9,24 +9,18 @@
   <link rel="stylesheet" href="{{url_for('static', filename='dnd.css')}}">
 </head>
 <body class="border-visible" > 
-  <div class="border-visible drop" id="north-america"></div>
-  <div class="border-visible drop" id="europe"></div>
-  <div class="border-visible drop" id="australia"></div>
+  {% for country in countries %}
+  <div class="border-visible drop" id="{{country}}"></div>
+  <div class="border-visible docker_image_green drag" id="{{country}}_docker_image"></div>
+  <div class="stream border-visible show_chart" data-stream_name="{{country}}" id="{{country}}_stream"></div>
+  <div class="stream border-visible " data-stream_name="{{country}}_replica" id="{{country}}_replica_stream"></div>
+  <div class="border-visible country_chart" data-country="{{country}}" id="{{country}}_chart"></div>
+  {% endfor %}
   <div class="border-visible docker_image drag" id="source_docker_image"></div>
-  <div class="border-visible docker_image_green drag" id="europe_docker_image"></div>
-  <div class="border-visible docker_image_green drag" id="north-america_docker_image"></div>
-  <div class="border-visible docker_image_green drag" id="australia_docker_image"></div>
   <div class="border-visible drop" id="recycle"></div>
-  <div class="border-visible show_chart" id="north-america_streams"></div>
-  <div class="border-visible show_chart" id="europe_streams"></div>
-  <div class="border-visible show_chart" id="australia_streams"></div>
-  <div class="border-visible drop" id="global_streams"></div>
-  <div class="border-visible" id="global_charts"></div>
-  <div class="border-visible country_charts" id="north-america_charts"></div>
-  <div class="border-visible country_charts" id="europe_charts"></div>
-  <div class="border-visible country_charts" id="australia_charts"></div>
+  <div class="border-visible" id="global_cluster"></div>
   <button id="replicate_streams" class="btn btn-danger btn-sm">Replicate streams</button>
-
+  <div class="border-visible country_chart" data-country="global" id="global_chart"></div>
 </body>
 
   <script type="text/javascript" src="{{url_for('static', filename='jquery-1.12.4.js')}}"></script>

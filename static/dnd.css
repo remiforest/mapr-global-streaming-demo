@@ -89,7 +89,7 @@ body {
   height: 100px;
 }
 
-#north-america_streams  {
+#north-america_stream  {
   position: fixed;
   top: 165px;
   left: 255px;
@@ -100,7 +100,7 @@ body {
   background-size: cover;
 }
 
-#europe_streams  {
+#europe_stream  {
   position: fixed;
   top: 110px;
   left: 680px;
@@ -111,7 +111,7 @@ body {
   background-size: cover;
 }
 
-#australia_streams  {
+#australia_stream  {
   position: fixed;
   top: 450px;
   left: 914px;
@@ -122,15 +122,40 @@ body {
   background-size: cover;
 }
 
-#global_streams  {
+
+#north-america_replica_stream  {
   position: fixed;
-  top: 350px;
-  left: 620px;
+  top: 380px;
+  left: 400px;
   width: 100px;
-  height: 120px;
+  height: 40px;
   display: none;
   background-image: url(mapres.png);
+  background-size: cover;
 }
+
+#europe_replica_stream  {
+  position: fixed;
+  top: 300px;
+  left: 560px;
+  width: 100px;
+  height: 40px;
+  display: none;
+  background-image: url(mapres.png);
+  background-size: cover;
+}
+
+#australia_replica_stream  {
+  position: fixed;
+  top: 450px;
+  left: 600px;
+  width: 100px;
+  height: 40px;
+  display: none;
+  background-image: url(mapres.png);
+  background-size: cover;
+}
+
 
 #replicate_streams  {
   position: fixed;
@@ -143,15 +168,21 @@ body {
   display: none;
 }
 
-#global_charts  {
+#global_chart  {
   position: fixed;
-  top: 10px;
-  left: 1300px;
-  width: 400px;
-  height: 600px;
+  top: 240px;
+  left: 660px;
 }
 
-#north-america_charts  {
+#global_cluster  {
+  position: fixed;
+  top: 365px;
+  left: 520px;
+  width: 80px;
+  height: 80px;
+}
+
+#north-america_chart  {
   position: fixed;
   top: 300px;
   left: 20px;
@@ -159,7 +190,7 @@ body {
   height: 200px;
 }
 
-#europe_charts  {
+#europe_chart  {
   position: fixed;
   top: 10px;
   left: 780px;
@@ -167,7 +198,7 @@ body {
   height: 200px;
 }
 
-#australia_charts  {
+#australia_chart  {
   position: fixed;
   top: 500px;
   left: 725px;
@@ -175,7 +206,7 @@ body {
   height: 200px;
 }
 
-.country_charts  {
+.country_chart  {
     display: none;
 }
 

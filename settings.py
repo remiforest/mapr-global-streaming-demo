@@ -29,13 +29,5 @@ LOG_FOLDER = ROOT_PATH + "logs/" # Folder to store the logs
 DATA_FOLDER = ROOT_PATH + 'data/'   # Folder to store the data (streams and tables)
 SOURCE_FOLDER = DATA_FOLDER + 'source/'   # Folder to store the data (streams and tables)
 TARGET_FOLDER = DATA_FOLDER + 'target/'   # Folder to store the data (streams and tables)
-GKM_TABLE = DATA_FOLDER + 'cargkm'  # Path for the table that stores GKM information
-COUNT_TABLE = DATA_FOLDER + 'count'  # Path for the table that stores count information
-COUNTRY_TABLE = DATA_FOLDER + 'country'  # Path for the table that stores countries information
 
-
-# App settings
-COUNTRY_PORTS = {"north-america":"8080",
-                 "europe":"8081",
-                 "australia":"8082"}
 

@@ -44,17 +44,13 @@ if args.reset :
 
 # Test if stream exists
 if not settings.CLUSTER.is_stream(stream):
-    logging.debug("creating stream {}".format(stream))
+    logging.info("creating stream {}".format(stream))
     settings.CLUSTER.create_stream(stream)
-    logging.debug("stream created")
+    logging.info("stream created")
 
 
-
-
-
-logging.debug("creating producer for {}".format(stream))
+logging.info("creating producer for {}".format(stream))
 p = Producer({'streams.producer.default.stream': stream})
-
 
 
 def generate_models_distribution():
@@ -86,29 +82,7 @@ def generate_models_distribution():
 
     return model_distrib
 
-
-def generate_color_distribution():
-    # Generate color distribution
-    colors = []
-    colors.append(("black",random.randint(0,30)))
-    colors.append(("white",random.randint(0,30)))
-    colors.append(("grey",random.randint(0,30)))
-    colors.append(("blue",random.randint(0,30)))
-    colors.append(("red",random.randint(0,30)))
-    colors.append(("brown",random.randint(0,30)))
-    colors.append(("green",random.randint(0,30)))
-
-    color_distrib = []
-    for color in colors:
-        weight = color[1]
-        for i in range(weight):
-            color_distrib.append(color[0])
-
-    return color_distrib
-
-
 model_distrib = generate_models_distribution()
-color_distrib = generate_color_distribution()
 
 
 logging.debug("Injecting ...")
@@ -116,15 +90,14 @@ logging.debug("Injecting ...")
 nb_cars = 0
 while True:
     car_model = model_distrib[random.randint(0,len(model_distrib)-1)]
-    car_color = color_distrib[random.randint(0,len(color_distrib)-1)]
-    message = {"timestamp":int(time.time()),"country":country,"color":car_color,"model":car_model}
+    message = {"timestamp":int(time.time()),"country":country,"model":car_model}
     p.produce("default_topic", json.dumps(message))
     time.sleep(1/traffic)
     nb_cars += 1
     if nb_cars % (traffic * 10) == 0:
         logging.info("{} cars injected".format(nb_cars))
         model_distrib = generate_models_distribution()
-        color_distrib = generate_models_distribution()
+
 
 
 
