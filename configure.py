@@ -31,8 +31,4 @@ if not os.path.exists(settings.LOG_FOLDER):
 
 print("Log directory created")
 
-
-print("updating init file")
-os.system("sed -i 's/demo\.mapr\.com/{}/g' init.sh".format(settings.CLUSTER_NAME))
-
 print("Configuration complete, initialize environment variables with source init.sh then run the aplication using start.py")

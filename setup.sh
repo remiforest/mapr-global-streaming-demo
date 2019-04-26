@@ -6,9 +6,21 @@ if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 
    exit 1
 fi
+if [ -n "$(command -v yum)" ];
+then
+    yum install -y python-setuptools
+    yum install -y python-pip
+fi
+if [ -n "$(command -v apt-get)" ];
+then
+    apt-get install -y python-setuptools
+    apt-get install -y python-pip
+fi
 
-yum install python-setuptools -y
-yum install -y python-pip
+[ -n "$(command -v yum)" ]
+
+[ -n "$(command -v apt-get)" ]
+
 
 pip install --upgrade pip
 
