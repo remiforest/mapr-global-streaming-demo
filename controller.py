@@ -227,7 +227,7 @@ def remove_country():
   replica_stream_name = country + "_replica"
   
   # Close and delete the consumer from the global list of active consumers
-  consumer[source_stream_name].close()
+  consumers[source_stream_name].close()
   del consumers[source_stream_name]
 
   # Deletes the stream on the cluster
