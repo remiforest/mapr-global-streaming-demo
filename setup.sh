@@ -8,11 +8,13 @@ if [[ $EUID -ne 0 ]]; then
 fi
 if [ -n "$(command -v yum)" ];
 then
+    yum install -y gcc-c++
     yum install -y python-setuptools
     yum install -y python-pip
 fi
 if [ -n "$(command -v apt-get)" ];
 then
+    apt-get install -y gcc
     apt-get install -y python-setuptools
     apt-get install -y python-pip
 fi
